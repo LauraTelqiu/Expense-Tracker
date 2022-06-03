@@ -20,7 +20,7 @@ export const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: entredAmount,
+      amount: +entredAmount,
       date: new Date(entredDate)
     };
     props.onSaveExpenseData(expenseData);
@@ -60,6 +60,7 @@ export const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="Submit">Add Expense</button>
       </div>
     </form>
